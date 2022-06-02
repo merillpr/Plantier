@@ -1,13 +1,8 @@
-from flask import Flask, render_template, url_for, redirect
-from flask_login import login_user, LoginManager, login_required, logout_user, current_user
-from app import db, bcrypt, create_app, login_manager
-from user import User
-from form import RegisterForm, LoginForm
-app = create_app()
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+from flask import render_template, url_for, redirect
+from flask_login import login_user, login_required, logout_user, current_user
+from app import db, bcrypt, app
+from app.user import User
+from app.form import RegisterForm, LoginForm
 
 
 @app.route('/')
@@ -54,7 +49,3 @@ def signup():
         return redirect(url_for('login'))
 
     return render_template('signup_page.html', form=form)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
