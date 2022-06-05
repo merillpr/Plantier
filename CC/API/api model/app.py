@@ -16,7 +16,10 @@ from flask import Flask, request, render_template, jsonify
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER']= "images"
 
-model = tf.keras.models.load_model("paddy_lea_disease_detection_model.h5", custom_object={'KerasLayer':hub.KerasLayer})
+tf.keras.models.load_model(
+    # "paddy_lea_disease_detection_model.h5", 
+    custom_objects={'KerasLayer':hub.KerasLayer}
+    )
 #model = tf.keras.model.load_model("simple_model.h5")
 
 #server test functions
