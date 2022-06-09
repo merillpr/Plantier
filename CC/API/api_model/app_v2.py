@@ -21,7 +21,7 @@ app.config['UPLOAD_FOLDER']= "images"
     #compile = True,
     #options = None
     #)
-model = tf.keras.models.load_model("../../../ML/model_v4.h5", custom_objects={'KerasLayer':hub.KerasLayer})
+Model = tf.keras.models.load_model("../../../ML/model_v4-2.h5", custom_objects={'KerasLayer':hub.KerasLayer})
 
 #test
 @app.route("/")
@@ -45,51 +45,40 @@ def predict():
 
     #Read Label Model
     df = pd.read_csv("../../../ML/description_v2.csv", sep = ";")
-    def return_label(array):
-        largest = 0
-        for x in range(0, len(array)):
-            if(array[x] > largest):
-                largest = array[x]
-                y=x
-        return y
+    
     #read the image
     img_size = (224, 224)
     dummy = load_img(fname, target_size = img_size)
     dummy = img_to_array(dummy)
     dummy = np.expand_dims(dummy, axis = 0)
-    result = model.predict(dummy)
-    label = return_label(result[0])
+    result = Model.predict(dummy)
+    label = np.argmax(result[0])
+    id = str(time.time()).replace('.', '')[3:13]
     if label == 0:
-        id = str(time.time()).replace('.', '')[3:13]
         label_name = 'Common rust'
-        description = df.loc[label_name, 'description']
-        solution = df.loc[label_name, 'resolve,,,,,,,,,']
-        #description = df.loc[df["disease_name"] == label_name]["description"][0]
-        #solution = df.loc[df["disease_name"] == label_name]["resolve"][0]
     elif label == 1:
-        id = str(time.time()).replace('.', '')[3:13]
         label_name = 'bight'
-        description = df.loc[label_name, 'description']
-        solution = df.loc[label_name, 'resolve,,,,,,,,,']
     elif label == 2:
-        id = str(time.time()).replace('.', '')[3:13]
         label_name = 'Gray leaf spot'
-        description = df.loc[label_name, 'description']
-        solution = df.loc[label_name, 'resolve,,,,,,,,,']
     elif label == 3:
-        id = str(time.time()).replace('.', '')[3:13]
         label_name = 'corn healthy'
-        description = df.loc[label_name, 'description']
-        solution = df.loc[label_name, 'resolve,,,,,,,,,']
+    description = df.loc[df["disease_name"] == label_name, 'description']
+    solution = df.loc[df["disease_name"] == label_name, 'resolve,,,,,,,,,']
     os.remove("images/{}".format(get_img.filename))
     #return jsonify(id=id, label=label_name, description=description, solution= solution)
     return jsonify({
             'message': "prediction success",
             'user': {
+                'result1' : str(result[0][0]),
+                'result2' : str(result[0][1]),
+                'result3' : str(result[0][2]),
+                'result4' : str(result[0][3]),
+                'label' : str(label),
                 'id': id,
                 'name' : label_name,
                 'description' : description.to_json(),
                 'solution' : solution.to_json()
+                
             }
 
         })

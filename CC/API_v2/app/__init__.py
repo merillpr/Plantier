@@ -12,6 +12,7 @@ login_manager.login_view = 'login'
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'somerandomsecretkey'
+app.config['UPLOAD_FOLDER']= "images"
 
 login_manager.init_app(app)
 db.init_app(app)
