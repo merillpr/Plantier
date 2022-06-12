@@ -2,7 +2,14 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import pandas as pd
 
-from app import db
+from flask_marshmallow import Marshmallow
+from app import db, app
+
+ma = Marshmallow(app)
+class modelSchema(ma.Schema):
+  class Meta:
+    fields = ('id', 'name', 'description', 'solution')
+
 
 class model(db.Model):
     id = db.Column(db.String(10), primary_key=True)

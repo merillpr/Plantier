@@ -9,11 +9,12 @@ from flask_login import login_user, login_required, logout_user, current_user
 from app import db, bcrypt, app
 from app.statusCode import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_REQUEST, HTTP_401_UNAUTHORIZED, HTTP_409_CONFLICT
 from app.user import User, userSchema
-from app.model import model, Model, df
+from app.model import model, Model, df, modelSchema
 from keras.utils import load_img, img_to_array
 
 allUsers = userSchema(many=True)
 singleUser = userSchema()
+singleModel = modelSchema()
 
 
 @app.route('/')
@@ -25,18 +26,19 @@ def home():
 def getUsers():
     users = User.query.all()
     result = allUsers.dump(users)
-    return jsonify(result)
+    return jsonify({
+            'message': "Get all data user",
+            'user' : result
+        }), HTTP_200_OK
 
 
 @app.route('/login', methods=['POST'])
 def login():
     if current_user.is_authenticated:
+        result = singleUser.dump(current_user)
         return jsonify({
             'message': "User has logged in",
-            'user': {
-                    'id' : current_user.id,
-                    'username': current_user.username,
-                }
+            'user': result
         }), HTTP_200_OK
 
     username = request.json.get('username', '')
@@ -47,12 +49,10 @@ def login():
     if user:
         if bcrypt.check_password_hash(user.password, password):
             login_user(user)
+            result = singleUser.dump(user)
             return jsonify({
                 'message': "User has logged in",
-                'user': {
-                    'id' : user.id,
-                    'username': user.username,
-                }
+                'user': result
 
             }), HTTP_200_OK
 
@@ -98,12 +98,10 @@ def signup():
     new_user = User(email=email,username=username, password=hashed_password,id=id)
     db.session.add(new_user)
     db.session.commit()
-
+    result = singleUser.dump(new_user)
     return jsonify({
             'message': "User created",
-            'user': {
-                'username': username
-            }
+            'user': result
 
         }), HTTP_201_CREATED
 
@@ -112,7 +110,11 @@ def signup():
 @login_required
 def get_user(id):
     user = User.query.get(id)
-    return singleUser.jsonify(user)
+    result = singleUser.dump(user)
+    return jsonify({
+            'message': "Get user data",
+            'user' : result
+        }), HTTP_200_OK
 
 
 @app.route('/user/<id>', methods=['PUT'])
@@ -142,8 +144,12 @@ def update_user(id):
     #user.profile_image = profile_image
 
     db.session.commit()
+    result = singleUser.dump(user)
+    return jsonify({
+            'message': "User has updated",
+            'user' : result
+        }), HTTP_200_OK
 
-    return singleUser.jsonify(user)
 
 @app.route('/user/<id>', methods=['DELETE'])
 @login_required
@@ -155,6 +161,7 @@ def delete_user(id):
   return jsonify({
             'message': "User has deleted",
         }), HTTP_200_OK
+
 
 @app.route("/predict", methods= ["POST"])
 def predict():
@@ -186,18 +193,9 @@ def predict():
     model.solution = df.loc[df["disease_name"] == model.name, 'resolve'].to_json()
     os.remove("images/{}".format(get_img.filename))
     #return jsonify(id=id, label=label_name, description=description, solution= solution)
+    result = singleModel.dump(model)
     return jsonify({
             'message': "prediction success",
-            'user': {
-                'result1' : str(result[0][0]),
-                'result2' : str(result[0][1]),
-                'result3' : str(result[0][2]),
-                'result4' : str(result[0][3]),
-                'label' : str(label),
-                'id': model.id,
-                'name' : model.name,
-                'description' : model.description,
-                'solution' : model.solution  
-            }
+            'model': result
         })
         
