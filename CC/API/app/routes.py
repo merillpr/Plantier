@@ -177,13 +177,13 @@ def predict():
     if label == 0:
         model.name = 'Common rust'
     elif label == 1:
-        model.name = 'bight'
+        model.name = 'blight'
     elif label == 2:
         model.name = 'Gray leaf spot'
     elif label == 3:
         model.name = 'corn healthy'
     model.description = df.loc[df["disease_name"] == model.name, 'description'].to_json()
-    model.solution = df.loc[df["disease_name"] == model.name, 'resolve,,,,,,,,,'].to_json()
+    model.solution = df.loc[df["disease_name"] == model.name, 'resolve'].to_json()
     os.remove("images/{}".format(get_img.filename))
     #return jsonify(id=id, label=label_name, description=description, solution= solution)
     return jsonify({

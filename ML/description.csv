@@ -1,11 +1,7 @@
-﻿disease_name;description;resolve
-Downy mildew;the surface of the leaf has stripes;Ridomil 35 SD
-Northern Leaf Blight;small spot;systemic fungicide
-Southern Leaf Blight;reddish brown spots;systemic fungicide
-Southern Rust;There are small spots on the upper and lower leaf surfaces;triadomefon fungicide
-Sheath Blight;the surface of the midrib of salmon-colored mushroom spots;Plant resistant varieties
-Peronosclerospora maydis;Leaf surface is white to yellowish;use resistant varieties
-Bipolaris maydis Syn;leaf spots are yellowish green or reddish brown;use resistant varieties
-Rhizoctonia solani;oval-shaped dwarf spot;use resistant varieties
-Puccinia polysora;small round spots;application of fungicide
-Mosaic Virus;mosaic colored leaves;Spraying pesticides
+disease_name;description;resolve
+blight;terlihat bercak kecil, oval, kebasahan, kemudian bercak memanjang berbentuk elips, menjadi bercak nekrotik (kering) yang luas (hawar), berwarna hijau keabu-abuan atau coklat, dengan panjang hawar 2,5 sampai 15 cm.;"Tanam varietas tahan seperti Kalingga, Arjuna, dan Hibrida Cl. 
+Varietas jagung manis (sweet corn) sangat peka terhadap penyakit 
+ini."
+Gray leaf spot;terjadi ketika muncul bercak daun berwarna hijau kekuningan atau cokelat kemerahan;menggunakan varietas tahan, seperti Bima 1, Sukmaraga, dan Palakka. Jika terlihat tanaman yang sudah terinfeksi maka harus segera dieradikasi. Dapat juga dilakukan pemberian fungisida dengan bahan aktif mancozeb dan carbendazim.
+Common rust;terjadi ketika timbul bercak-bercak kecil berbentuk bulat sampai oval terdapat pada permukaan daun jagung di bagian atas dan bawah.;varietas tahan, seperti Lamuru, Sukmaraga, dan Semar 10. Jika terlihat tanaman yang sudah terinfeksi maka harus segera dieradikasi. Dapat juga dilakukan pemberian fungisida dengan bahan aktif benomil.
+corn healthy;daunnya yang sempurna karena memiliki helai, pelepah, dan tangkai daun. Daun jagung punya tekstur yang licin atau berambut, dua tekstur utama dalam daunnya.;Pemberian pupuk dan Penyemprotan pestisida yang rutin 
