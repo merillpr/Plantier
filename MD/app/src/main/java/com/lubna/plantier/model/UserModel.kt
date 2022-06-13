@@ -1,10 +1,9 @@
 package com.lubna.plantier.model
 
 data class UserModel(
-    val name: String,
-    val email: String,
-    val password: String,
-    val isLogin: Boolean
+    var username: String,
+    var password: String,
+    var isLogin: Boolean
 )
 
 data class DataAnalysis (

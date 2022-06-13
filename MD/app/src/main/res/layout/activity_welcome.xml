@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_welcome_bg"
-    tools:context=".view.welcome.WelcomeActivity">
+    tools:context=".ui.welcome.WelcomeActivity">
 
     <TextView
         android:id="@+id/titleTextView"

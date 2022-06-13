@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
-    tools:context=".view.signup.SignupActivity">
+    tools:context=".ui.signup.SignupActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/ic_brand" />
+        app:srcCompat="@drawable/ic_brand"
+        android:contentDescription="@string/brand_image" />
 
     <TextView
         android:id="@+id/titleTextView"
