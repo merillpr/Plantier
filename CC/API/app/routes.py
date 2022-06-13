@@ -196,6 +196,6 @@ def predict():
     result = singleModel.dump(model)
     return jsonify({
             'message': "prediction success",
-            'model': result
+            'Model': result
         })
         
