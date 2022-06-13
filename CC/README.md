@@ -34,7 +34,7 @@
 |            |                       |                          |                                  |
 | API Model  | $HOST/predict         | POST -> Model            | - status code : 200              |
 |            |                       | - images : image file    | - message: "prediction success"  |
-|            |                       |   or string(base65 url)  | - Model                          |
+|            |                       |   or string(base65 url)  | - model                          |
 |            |                       |                          |                                  |
 
 # Database Mapping
