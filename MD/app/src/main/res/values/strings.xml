@@ -37,8 +37,8 @@
     <string name="treatment">Treatment</string>
     <string name="prevent1">Control can be by using resistant varieties, such as Srikandi, Lamuru, and Gumarang. In addition, planting can be done simultaneously and carry out a period of time free from corn plants at least two weeks to one month each year. If there are already infected, eradication or total destruction can be carried out. For prevention, metalaxyl fungicides can also be used on plant seeds with a dose of 0.7 grams of active ingredient per kg of seed</string>
     <string name="prevent2">Control can be by using resistant varieties, such as Bima 1, Sukmaraga, and Palakka. If infected plants are seen, they must be eradicated immediately. Can also be given a fungicide with the active ingredients mancozeb and carbendazim.</string>
-    <string name="desc1">Symptoms of this disease occur on the surface of the corn leaves which are white to yellowish followed by chlorotic stripes and another characteristic is that in the morning on the underside of the corn leaves there is a layer of white velvet. Downy mildew in maize causes systemic symptoms that extend to all parts of the plant and cause local symptoms. Plants infected with downy mildew at a young age usually do not form fruit, but if the infection occurs in older plants, fruit is still formed and generally stunted growth.</string>
-    <string name="desc2">Symptoms of this disease occur when leaf spots appear yellowish green or reddish brown. When affected corn seedlings may wilt or die within 3–4 weeks. If the infected cobs will cause the seeds to be damaged and rotten, the cobs can even fall. Infection with this disease can be carried by wind or rain splashes and can cause the first infection of corn plants.</string>
+    <string name="desc1">terjadi ketika timbul bercak-bercak kecil berbentuk bulat sampai oval terdapat pada permukaan daun jagung di bagian atas dan bawah.;varietas tahan, seperti Lamuru, Sukmaraga, dan Semar 10.</string>
+    <string name="desc2">terlihat bercak kecil, oval, kebasahan, kemudian bercak memanjang berbentuk elips, menjadi bercak nekrotik (kering) yang luas (hawar), berwarna hijau keabu-abuan atau coklat, dengan panjang hawar 2,5 sampai 15 cm.;"Tanam varietas tahan seperti Kalingga, Arjuna, dan Hibrida Cl.</string>
 
     <string name="take_photo">take photo</string>
     <string name="switch_camera">Switch Camera</string>
@@ -66,4 +66,75 @@
     <string name="gallery_button">Gallery Button</string>
     <string name="upload_button">Upload Button</string>
     <string name="username">Username</string>
+    <string name="bookmark_button">Bookmark Button</string>
+
+    <string-array name="benefit">
+        <item>Melancarkan pencernaan</item>
+        <item>Menyehatkan mata</item>
+        <item>Meningkatkan kepadatan tulang</item>
+        <item>Mencegah depresi</item>
+        <item>Mengendalikan tekanan darah</item>
+        <item>Menangkal radikal bebas</item>
+        <item>Menjaga kesehatan jantung</item>
+        <item>Mencegah kanker paru-paru</item>
+        <item>Meningkatkan daya ingat</item>
+        <item>Sumber energi</item>
+        <item>Kaya antioksidan</item>
+    </string-array>
+
+    <string-array name="benefit_photo">
+        <item>@drawable/ic_stomach</item>
+        <item>@drawable/ic_eye</item>
+        <item>@drawable/ic_bone</item>
+        <item>@drawable/ic_depression</item>
+        <item>@drawable/ic_blood</item>
+        <item>@drawable/ic_disease</item>
+        <item>@drawable/ic_heart</item>
+        <item>@drawable/ic_lungs</item>
+        <item>@drawable/ic_brain</item>
+        <item>@drawable/ic_energy</item>
+        <item>@drawable/ic_molecul</item>
+    </string-array>
+
+    <string-array name="benefit_desc">
+        <item>Jagung mengandung serat yang bermanfaat melancarkan pencernaan. Serat ini akan dicerna lebih lama dan dapat membuat saluran pencernaan lebih aktif. Karena mengandung serat, jagung dapat dikonsumsi untuk meringankan dan mencegah sembelit.</item>
+        <item>Jagung mengandung antioksidan zeaxantin dan lutein. Jenis nutrisi ini dikenal baik untuk menjaga kesehatan mata. Beberapa studi menunjukkan bahwa rutin mengonsumsi jagung dapat mengurangi risiko terjadinya gangguan mata terkait penuaan, seperti degenerasi makula dan katarak.</item>
+        <item>Dalam seporsi jagung terdapat kurang lebih 90 mg fosfor. Jumlah ini setara dengan 10% kebutuhan harian fosfor orang dewasa. Fosfor sendiri merupakan nutrisi yang berfungsi meningkatkan kepadatan dan kekuatan tulang serta gigi.</item>
+        <item>Jagung mengandung magnesium yang dapat menjaga kesehatan dan fungsi otak, sekaligus menjaga suasana hati. Kadar magnesium yang rendah disebut dapat meningkatkan risiko terkena depresi. Oleh karena itu, konsumsi jagung secara rutin dapat meningkatkan kadar magnesium dalam tubuh untuk mengurangi risiko depresi.</item>
+        <item>Kandungan mineral kalium dan magnesium serta antioksidan pada jagung juga baik untuk membantu mengontrol tekanan darah. Oleh sebab itu, mengonsumsi jagung secara rutin dapat memberi manfaat mencegah penyakit darah tinggi. Namun, jagung sebaiknya tidak ditambah garam berlebih, karena berpotensi meningkatkan tekanan darah.</item>
+        <item>Jagung mengandung banyak antioksidan dan vitamin C yang baik untuk menjaga tubuh tetap sehat. Antioksidan diketahui baik untuk menangkal efek radikal bebas yang dapat meningkatkan risiko terkena penyakit, serta penuaan dini.</item>
+        <item>Jagung rebus mengandung vitamin C, karotenoid, dan bioflavonoid. Kandungan ini sangat baik mengontrol jumlah kolesterol di dalam darah, sehingga masalah kardiovaskuler lebih terkontrol. Vitamin C pada jagung juga dapat membantu menurunkan asam amino di pembuluh darah. Asam amino yang tinggi bisa berisiko menimbulkan masalah pada pembuluh darah, serta masalah terkait jantung.</item>
+        <item>Jagung memiliki kandungan cryptoxanthin. Kandungan tersebut baik untuk menjaga perkembangan kanker paru mengganas.</item>
+        <item>Manfaat jagung untuk kesehatan lainnya, yakni dapat meningkatkan daya ingat. Manfaat tersebut diperoleh dari  kandungan Thiamine dan vitamin B1. Selain meningkatkan kemampuan ingatan, jagung rebus juga mampu mencegah penyakit alzheimer.</item>
+        <item>Jagung dapat dijadikan makanan pokok pengganti nasi. Tanaman ini menjadi sumber karbohidrat yang dapat diubah menjadi energi. Mengonsumsi jagung dapat menambah stamina, serta melancarkan metabolisme.. Ada sekitar 50% kalori yang dibutuhkan oleh tubuh dan bisa didapat dengan mengonsumsi makanan berkarbohidrat seperti jagung.</item>
+        <item>Menjadi sumber antioksidan. Jumlah antioksidan dalam jagung dikenal lebih tinggi daripada biji-bijian lain. Selain itu, kandungan lutein yang merupakan salah satu jenis antioksidan dalam jagung, dapat melindungi mata dari kerusakan sel. Ada juga zeaxanthin yang merupakan karotenoid paling umum ditemukan pada tumbuhan, mafaatnya mampu meningkatan kesehatan mata.</item>
+    </string-array>
+
+    <string-array name="disease_name">
+        <item>Blight</item>
+        <item>Common Rust</item>
+        <item>Grey Leaf Spot</item>
+        <item>Healthy</item>
+    </string-array>
+
+    <string-array name="disease_photo">
+        <item>@drawable/disease_blight</item>
+        <item>@drawable/disease_common_rust</item>
+        <item>@drawable/disease_grey_leaf_spot</item>
+        <item>@drawable/disease_healthy</item>
+    </string-array>
+
+    <string-array name="disease_desc">
+        <item>Terlihat bercak kecil, oval, kebasahan, kemudian bercak memanjang berbentuk elips, menjadi bercak nekrotik (kering) yang luas (hawar), berwarna hijau keabu-abuan atau coklat, dengan panjang hawar 2,5 sampai 15 cm.</item>
+        <item>Terjadi ketika timbul bercak-bercak kecil berbentuk bulat sampai oval terdapat pada permukaan daun jagung di bagian atas dan bawah.</item>
+        <item>Terjadi ketika muncul bercak daun berwarna hijau kekuningan atau cokelat kemerahan</item>
+        <item>Daunnya yang sempurna karena memiliki helai, pelepah, dan tangkai daun. Daun jagung punya tekstur yang licin atau berambut, dua tekstur utama dalam daunnya.</item>
+    </string-array>
+
+    <string-array name="disease_treat">
+        <item>Tanam varietas tahan seperti Kalingga, Arjuna, dan Hibrida Cl. Varietas jagung manis (sweet corn) sangat peka terhadap penyakit ini</item>
+        <item>Varietas tahan, seperti Lamuru, Sukmaraga, dan Semar 10. Jika terlihat tanaman yang sudah terinfeksi maka harus segera dieradikasi. Dapat juga dilakukan pemberian fungisida dengan bahan aktif benomil.</item>
+        <item>Menggunakan varietas tahan, seperti Bima 1, Sukmaraga, dan Palakka. Jika terlihat tanaman yang sudah terinfeksi maka harus segera dieradikasi. Dapat juga dilakukan pemberian fungisida dengan bahan aktif mancozeb dan carbendazim.</item>
+        <item>Pemberian pupuk dan Penyemprotan pestisida yang rutin</item>
+    </string-array>
 </resources>

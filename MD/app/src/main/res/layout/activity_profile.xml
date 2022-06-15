@@ -7,43 +7,11 @@
     tools:context=".ui.profile.ProfileActivity">
 
     <LinearLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/ib_back_profile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_back_dark_green"
-            android:scaleType="centerCrop"
-            android:background="@null"
-            android:layout_marginStart="15dp"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/back_button" />
-
-        <TextView
-            android:id="@+id/tv_title_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/profile"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/green_dark"
-            android:layout_marginStart="130dp"
-            android:layout_gravity="center_vertical"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/container_foto_profi"
+        android:id="@+id/container_foto_profil"
         android:layout_width="0dp"
         android:layout_height="250dp"
-        android:background="@color/green_dark"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:background="@color/green_light"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center">
@@ -52,157 +20,146 @@
             android:id="@+id/ci_profil"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/ic_user_light"
+            android:src="@drawable/ic_profile"
             app:civ_border_color="@color/white"
             app:civ_border_width="10dp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/container_profil"
+    <TextView
+        android:id="@+id/profileTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/container_foto_profi"
+        android:text="@string/profile"
+        android:background="@color/white_green_gray"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/container_foto_profil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:padding="5dp">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/profile"
-            android:background="@color/white_green_gray"
-            android:textStyle="bold"
-            android:padding="5dp"
-            android:textSize="20sp"/>
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white_green_gray"
+        app:layout_constraintTop_toBottomOf="@id/profileTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white_green_gray"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"/>
-
-        <TextView
-            android:id="@+id/profile_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nama_user"
-            android:textSize="16sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white_green_gray"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"/>
-
-        <TextView
-            android:id="@+id/profile_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email_user"
-            android:textSize="16sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white_green_gray"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/container_setting"
+    <TextView
+        android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/container_profil"
+        android:text="@string/name"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/line1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:padding="5dp">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/setting"
-            android:background="@color/white_green_gray"
-            android:textStyle="bold"
-            android:padding="5dp"
-            android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white_green_gray"/>
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white_green_gray"
+        app:layout_constraintTop_toBottomOf="@id/profile_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/theme"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"/>
+    <TextView
+        android:id="@+id/settingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting"
+        android:background="@color/white_green_gray"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tv_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dark_mode"
-                android:textSize="16sp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white_green_gray"
+        app:layout_constraintTop_toBottomOf="@id/settingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/theme"
-                android:layout_width="70dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="220dp"
-                android:gravity="center_vertical"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/themeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/theme"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/line4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white_green_gray"/>
+    <TextView
+        android:id="@+id/tvTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/themeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/switch_theme"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logoutButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green_dark"
-            android:text="@string/logout"
-            app:cornerRadius="10dp" />
-    </LinearLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/themeTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white_green_gray"
+        app:layout_constraintTop_toBottomOf="@id/switch_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_light"
+        android:text="@string/logout"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/line5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

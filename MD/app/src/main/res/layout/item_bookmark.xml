@@ -14,27 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_penyakit_item_bookmark"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_launcher_background"
-            android:contentDescription="Disease" />
-
         <TextView
             android:id="@+id/tv_title_item_bookmark"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/nama_penyakit"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textColor="@color/black"
             android:layout_marginStart="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/iv_penyakit_item_bookmark"/>
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageButton
             android:id="@+id/ib_delete_item_bookmark"

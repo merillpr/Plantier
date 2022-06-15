@@ -3,11 +3,13 @@ package com.lubna.plantier.ui.bookmark
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.lubna.plantier.R
 import com.lubna.plantier.databinding.ActivityBookmarkBinding
-import com.lubna.plantier.model.DataAnalysis
+import com.lubna.plantier.data.model.DataAnalysis
 
 class BookmarkActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBookmarkBinding
@@ -18,17 +20,17 @@ class BookmarkActivity : AppCompatActivity() {
 
         setupBookmark()
         setupView()
-        setupAction()
+//        setupAction()
     }
 
     private fun getDataDummy(): List<DataAnalysis> {
         val data1 = DataAnalysis(
-            "Penyakit 1",
+            "Blight",
             "Penyakit 1 adalah bla bla bla",
             "Treatment yang harus dilakukan adalah bla bla bla"
         )
         val data2 = DataAnalysis(
-            "Penyakit 2",
+            "Common Rust",
             "Penyakit 2 adalah bla bla bla",
             "Treatment yang harus dilakukan adalah bla bla bla"
         )
@@ -44,21 +46,23 @@ class BookmarkActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun setupAction(){
-        binding.ibBackBookmark.setOnClickListener {
-            finish()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
+
+//    private fun setupAction(){
+//        binding.ibBackBookmark.setOnClickListener {
+//            finish()
+//        }
+//    }
 }

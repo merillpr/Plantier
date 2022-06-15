@@ -16,7 +16,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.lubna.plantier.databinding.ActivitySignupBinding
-import com.lubna.plantier.model.UserPreference
+import com.lubna.plantier.data.model.UserPreference
+import com.lubna.plantier.data.response.SignupRequest
 import com.lubna.plantier.ui.ViewModelFactory
 import com.lubna.plantier.ui.welcome.WelcomeActivity
 
@@ -57,46 +58,14 @@ class SignupActivity : AppCompatActivity() {
         )[SignupViewModel::class.java]
     }
 
-    /*private fun setupAction() {
-        binding.signupButton.setOnClickListener {
-            val name = binding.nameEditText.text.toString()
-            val email = binding.emailEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
-            when {
-                name.isEmpty() -> {
-                    binding.nameEditTextLayout.error = "Masukkan email"
-                }
-                email.isEmpty() -> {
-                    binding.emailEditTextLayout.error = "Masukkan email"
-                }
-                password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Masukkan password"
-                }
-                else -> {
-                    signupViewModel.saveUser(UserModel(name, email, password, false))
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Yeah!")
-                        setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")
-                        setPositiveButton("Lanjut") { _, _ ->
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
-                }
-            }
-        }
-    }*/
-
-    //signup
     private fun setupAction() {
         binding.signupButton.setOnClickListener {
-            val username = binding.nameEditText.text.toString()
+            val username = binding.usernameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
             when {
                 username.isEmpty() -> {
-                    binding.nameEditTextLayout.error = "Masukkan username"
+                    binding.usernameEditTextLayout.error = "Masukkan username"
                 }
                 password.isEmpty() -> {
                     binding.passwordEditTextLayout.error = "Masukkan password"
@@ -119,7 +88,6 @@ class SignupActivity : AppCompatActivity() {
             }
         }
     }
-    //signup
 
     private fun playAnimation() {
         ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_X, -30f, 30f).apply {
@@ -129,8 +97,8 @@ class SignupActivity : AppCompatActivity() {
         }.start()
 
         val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(500)
-        val nameTextView = ObjectAnimator.ofFloat(binding.nameTextView, View.ALPHA, 1f).setDuration(500)
-        val nameEditTextLayout = ObjectAnimator.ofFloat(binding.nameEditTextLayout, View.ALPHA, 1f).setDuration(500)
+        val nameTextView = ObjectAnimator.ofFloat(binding.usernameTextView, View.ALPHA, 1f).setDuration(500)
+        val nameEditTextLayout = ObjectAnimator.ofFloat(binding.usernameEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val emailTextView = ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(500)
         val emailEditTextLayout = ObjectAnimator.ofFloat(binding.emailEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(500)

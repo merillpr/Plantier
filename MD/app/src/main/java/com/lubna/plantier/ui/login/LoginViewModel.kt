@@ -1,9 +1,11 @@
 package com.lubna.plantier.ui.login
 
 import androidx.lifecycle.*
-import com.lubna.plantier.api.ApiConfig
-import com.lubna.plantier.model.UserModel
-import com.lubna.plantier.model.UserPreference
+import com.lubna.plantier.data.model.UserModel
+import com.lubna.plantier.data.model.UserPreference
+import com.lubna.plantier.data.remote.ApiConfig
+import com.lubna.plantier.data.response.LoginRequest
+import com.lubna.plantier.data.response.LoginResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,15 +1,13 @@
 package com.lubna.plantier.ui.main
 
-import android.app.Dialog
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.lubna.plantier.R
 import com.lubna.plantier.databinding.ItemDiseaseBinding
-import com.lubna.plantier.model.Disease
+import com.lubna.plantier.data.model.Disease
+import com.lubna.plantier.ui.detail.disease.DiseaseActivity
 
 class DiseaseAdapter(private val diseaseList : List<Disease>) :
     RecyclerView.Adapter<DiseaseAdapter.DiseaseViewHolder>() {
@@ -18,24 +16,16 @@ class DiseaseAdapter(private val diseaseList : List<Disease>) :
         fun bind(disease: Disease) {
             binding.apply {
                 Glide.with(itemView)
-                    .load(disease.diseaseImage)
+                    .load(disease.disease_photo)
                     .into(diseaseImageView)
-                diseaseTextView.text = disease.diseaseName
-                diseaseDescTextView.text = disease.diseaseDesc
+                diseaseTextView.text = disease.disease_name
+                diseaseDescTextView.text = disease.disease_desc
 
                 moreButton.setOnClickListener {
-                    val dialog = Dialog(cardView.context)
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-                    dialog.setCancelable(true)
-                    dialog.setContentView(R.layout.dialog_detail_analysis)
+                    val intent = Intent(itemView.context, DiseaseActivity::class.java)
+                    intent.putExtra("Disease", disease)
 
-                    val name = dialog.findViewById<TextView>(R.id.tv_name)
-                    val detail = dialog.findViewById<TextView>(R.id.tv_detail_penyakit)
-                    val treatment = dialog.findViewById<TextView>(R.id.tv_detail_treatment)
-
-                    name.text = disease.diseaseName
-
-                    dialog.show()
+                    itemView.context.startActivity(intent)
                 }
             }
         }

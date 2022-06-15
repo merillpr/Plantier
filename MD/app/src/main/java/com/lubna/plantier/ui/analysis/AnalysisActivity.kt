@@ -11,6 +11,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.TextView
@@ -24,9 +25,10 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.lubna.plantier.R
+import com.lubna.plantier.data.model.UserPreference
 import com.lubna.plantier.databinding.ActivityAnalysisBinding
-import com.lubna.plantier.model.UserPreference
 import com.lubna.plantier.ui.ViewModelFactory
+import com.lubna.plantier.ui.detail.DetailActivity
 import com.lubna.plantier.utils.customTempFile
 import com.lubna.plantier.utils.reduceFileImage
 import com.lubna.plantier.utils.uriToFile
@@ -36,9 +38,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
 private var imageFile: File? = null
-//upload foto
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-//upload foto
 
 class AnalysisActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var analysisViewModel: AnalysisViewModel
@@ -84,20 +84,34 @@ class AnalysisActivity : AppCompatActivity(), View.OnClickListener {
             )
         }
 
-        setupViewModel()//upload foto
+        setupView()
+        setupViewModel()
         binding.btnGallery.setOnClickListener(this)
         binding.btnCamera.setOnClickListener(this)
         binding.btnUpload.setOnClickListener(this)
     }
 
-    //upload foto
+    private fun setupView() {
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun setupViewModel() {
         analysisViewModel = ViewModelProvider(
             this,
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[AnalysisViewModel::class.java]
     }
-    //upload foto
 
     override fun onClick(p0: View) {
         when(p0.id){
@@ -175,7 +189,13 @@ class AnalysisActivity : AppCompatActivity(), View.OnClickListener {
                 if (response?.message == "prediction success") {
                     //Log.e("AnalysisActivity", analysisResponse.toString())
                     //showPreview(response.Model.name, response.Model.description, response.Model.solution)
-                    Toast.makeText(this@AnalysisActivity, response.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AnalysisActivity, response.Model.description, Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, DetailActivity::class.java).apply {
+                        putExtra(DetailActivity.NAME_EXTRA, response.Model.name)
+                        putExtra(DetailActivity.DESCRIPTION_EXTRA, response.Model.description)
+                        putExtra(DetailActivity.SOLUTION_EXTRA, response.Model.solution)
+                    }
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this@AnalysisActivity, response?.message, Toast.LENGTH_SHORT).show()
                 }
@@ -206,8 +226,4 @@ class AnalysisActivity : AppCompatActivity(), View.OnClickListener {
 
         dialog.show()
     }
-    //upload foto
-
-
-
 }

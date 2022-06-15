@@ -3,8 +3,9 @@ package com.lubna.plantier.ui.analysis
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.lubna.plantier.api.ApiConfig
-import com.lubna.plantier.model.UserPreference
+import com.lubna.plantier.data.model.UserPreference
+import com.lubna.plantier.data.remote.ApiConfig
+import com.lubna.plantier.data.response.AnalysisResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Callback

@@ -5,7 +5,7 @@
 
     <uses-feature android:name="android.hardware.camera" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -17,11 +17,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Plantier"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.detail.disease.DiseaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detail.benefit.BenefitActivity"
+            android:exported="false" />
+         <activity
+         android:name=".ui.detail.DetailActivity"
+         android:exported="false" />
+        <activity
             android:name=".ui.analysis.AnalysisActivity"
-            android:exported="true" > <!--nanti jadikan false lagi-->
-        </activity>
+            android:exported="false"
+            android:label="Analysis" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="false" />
@@ -33,13 +43,15 @@
             android:exported="false" />
         <activity
             android:name=".ui.bookmark.BookmarkActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Bookmark" />
         <activity
             android:name=".ui.signup.SignupActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +59,6 @@
             </intent-filter>
         </activity>
 
-        //upload foto
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.lubna.plantier"
@@ -57,7 +68,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-        //upload foto
     </application>
 
 </manifest>

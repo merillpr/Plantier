@@ -2,7 +2,7 @@ package com.lubna.plantier.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.lubna.plantier.model.UserPreference
+import com.lubna.plantier.data.model.UserPreference
 import com.lubna.plantier.ui.analysis.AnalysisViewModel
 import com.lubna.plantier.ui.login.LoginViewModel
 import com.lubna.plantier.ui.main.MainViewModel
@@ -26,11 +26,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(pref) as T
             }
-            //upload foto
             modelClass.isAssignableFrom(AnalysisViewModel::class.java) -> {
                 AnalysisViewModel(pref) as T
             }
-            //upload foto
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

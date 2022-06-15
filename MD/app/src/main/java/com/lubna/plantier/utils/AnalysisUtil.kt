@@ -12,7 +12,6 @@ import java.util.*
 
 private const val FILENAME_FORMAT = "dd-MMM-yyyy"
 
-//upload foto
 fun reduceFileImage(file: File): File {
     val bitmapFile = BitmapFactory.decodeFile(file.path)
     var compressQuality = 100
@@ -27,7 +26,6 @@ fun reduceFileImage(file: File): File {
     bitmapFile.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
     return file
 }
-//upload foto
 
 fun uriToFile(image: Uri, context: Context): File {
     val content: ContentResolver = context.contentResolver
@@ -53,5 +51,3 @@ val timeStamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
-
-

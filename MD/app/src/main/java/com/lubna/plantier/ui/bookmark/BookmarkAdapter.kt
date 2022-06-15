@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.lubna.plantier.R
-import com.lubna.plantier.model.DataAnalysis
+import com.lubna.plantier.data.model.DataAnalysis
 
 class BookmarkAdapter(private val data: List<DataAnalysis>): RecyclerView.Adapter<BookmarkAdapter.ViewHolder>() {
 
